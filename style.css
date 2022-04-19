@@ -1,0 +1,210 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*
+	=== Linear Gradient ===
+	background-image: linear-gradient(red,yellow);
+	background: linear-gradient(red,30%,yellow);
+	background: linear-gradient(red 0% 50%, blue 50% 100%);
+	background: linear-gradient(to top, red,blue);
+	background: linear-gradient(to top left, red,yellow);
+	background: linear-gradient(90deg,red,yellow);
+	background: repeating-linear-gradient(yellow 0% 20%,red 20% 40%);
+	=== Radial Gradient ===
+	
+	radial-gradient(to center top, red,blue)
+	radial-gradient(at 50% 50%, red, blue)
+	radial-gradient(circle, red,blue)
+	radial-gradient(ellipse, yellow, green)
+	radial-gradient(closest-side at 30% 40%, red,blue)
+	radial-gradient(farthest-side at 20% 40%, red,blue)
+	radial-gradient(cosest-corner at 30% 50%, red,blue)
+	radial-gradient(farthest-corner at 50% 50%, red,blue)
+	repeating-radial-gradient(red,blue)
+	radial-gradient(at top center, red,blue), radial-gradient(at left center, red,blue), radial-gradient(at bottom center, red,yellow)
+
+	=== Conic Gradient ===
+	conic-gradient(red,blue)
+	conic-gradient(from 45deg, red,green)
+	conic-gradient(at 50% 50%, red,blue)
+	conic-gradient(from 90deg, at 50% 60%, blue,yellow,green)
+	conic-gradient(red 0deg 45deg,blue 45deg 90deg);
+	background-size: 20px 20px;
+	repeating-conic-gradient(red 0deg 10deg, blue 10deg 20deg);
+*/
+
+
+
+
+
+.linear {
+	width: 300px;
+	height: 300px;
+	background: blue;
+	margin: 10px;
+	float: left;
+}
+
+/* linear gradient in css */
+.grad1 {
+	background: linear-gradient(to right,blue,yellow,red);
+	animation-duration: 1s;
+	animation-name: grad1;
+	animation-iteration-count: infinite;
+}
+
+@keyframes grad1 {
+	from {
+		background: linear-gradient(to right,blue,yellow,red);	
+	}
+	to {
+		background: linear-gradient(to right,#ff00ff,#ff3300,#00fff2);
+	}
+}
+
+
+.grad2 {
+	background: linear-gradient(to top right, green, purple, tomato);
+	animation-duration: 1s;
+	animation-name: grad2;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes grad2 {
+	from {
+		background: linear-gradient(to top right, green, purple, tomato);
+	}
+	to {
+		background: linear-gradient(to bottom right, green, purple, tomato);
+	}
+}
+
+.grad3 {
+	background: linear-gradient(orange 0 25%,yellow 25% 50%,purple 50% 75%,rgb(241, 9, 48) 75% 100%);
+	animation-duration: 1s;
+	animation-name: grad3;
+	animation-iteration-count: infinite;
+}
+
+@keyframes grad3 {
+	from {
+		background: linear-gradient(orange 0 25%,yellow 25% 50%,purple 50% 75%,rgb(241, 9, 48) 75% 100%);
+	}
+	to {
+		background: linear-gradient(yellow 0 25%,orange 25% 50%,lime 50% 75%,purple 75% 100%);
+	}
+}
+
+
+.grad4 {
+	background: repeating-linear-gradient(to left top,red 0% 10%,blue 10% 20%,yellow 20% 30%);
+}
+.grad5 {
+	background: linear-gradient(to right top, rgb(5, 26, 56,.5), rgb(0, 77, 122,0.5), rgb(0, 135, 147,0.5), rgb(0, 191, 114,0.5), rgb(168, 235, 18,.5)), url("image/grand.jpg") no-repeat center / cover;
+	color: #fff;
+	font-size: 50px;
+	padding-top: 100px;
+	padding-left: 50px;
+	box-sizing: border-box;
+}
+/* radial gradient in css */
+
+.grad6 {
+	background-image: radial-gradient(red 0 30%,green 30%);
+}
+.grad7 {
+	background: repeating-radial-gradient(blue 0 10%,yellow 10% 20%);
+	transition: 3s;
+}
+.grad7:hover {
+	background: repeating-radial-gradient(green 0 10%,purple 10% 20%);
+	transform: rotate(360deg);
+	border-radius: 50%;
+}
+.grad8 {
+	background: radial-gradient(orange,purple,lime,transparent);
+}
+.grad9 {
+	background: radial-gradient(closest-side at 80px 80px,white,black);
+}
+.grad10 {
+	background: radial-gradient(red,green,blue,yellow,purple,orange,tomato);
+}
+.grad11 {
+	background: conic-gradient(red,blue,yellow);
+}
+.grad12 {
+	background: conic-gradient(from 45deg, red 45deg 180deg,blue 180deg 360deg);
+}
+.grad13 {
+	background: repeating-conic-gradient(#c21515 0 20deg,#04ff03 20deg 40deg,blue 40deg 60deg);
+	background-size: 35px 35px;
+	animation-duration: 1s;
+	animation-name: grad13;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+}
+
+@keyframes grad13 {
+	from {
+		background: repeating-conic-gradient(#c21515 0 20deg,#04ff03 20deg 40deg,blue 40deg 60deg);
+		background-size: 35px 35px;
+	}
+	to {
+		background: repeating-conic-gradient(#ec09ce 0 20deg,#6403ffc4 20deg 40deg,rgb(166, 255, 0) 40deg 60deg);
+		background-size: 35px 35px;
+	}
+}
+
+
+.grad14 {
+	background: repeating-conic-gradient(at 50% 50%,purple 0 10deg,#81eb00 10deg 20deg);
+	border-radius: 50%;
+	transition: 2s;
+	transform: rotate(0deg);
+	animation-name: anim;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-direction:reverse;
+}
+
+@keyframes anim {
+	0% {background: repeating-conic-gradient(at 50% 50%,purple 0 10deg,#81eb00 10deg 20deg);}
+	25% {background: repeating-conic-gradient(at 50% 50%,rgb(7, 223, 252) 0 10deg,#04fd10 10deg 20deg);
+		transform: rotate(360deg);}
+	50% {background: repeating-conic-gradient(at 50% 50%,rgb(7, 223, 252) 0 10deg,#fd04d3 10deg 20deg);
+			transform: rotate(360deg);}
+	75% {background: repeating-conic-gradient(at 50% 50%,rgb(7, 223, 252) 0 10deg,#3efd04 10deg 20deg);
+				transform: rotate(360deg);}
+
+	100% {background: repeating-conic-gradient(at 50% 50%,rgb(7, 223, 252) 0 10deg,#fdbb04 10deg 20deg);
+					transform: rotate(360deg);}
+}
+.grad15 {
+	background: repeating-conic-gradient(blue 0 10deg,red 10deg 20deg);
+	background-size: 50px 50px;
+}
+.grad16 {
+	background: conic-gradient(rgb(25, 0, 255) 45deg 90deg,rgb(200, 255, 0) 90deg 180deg,blue 180deg 270deg, rgb(239, 243, 4) 270deg 360deg);
+	border-radius: 50%;
+	transition: 1s;
+	animation-duration: 1s;
+	animation-name: grad16;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes grad16 {
+	0% {
+		background: conic-gradient(rgb(25, 0, 255) 45deg 90deg,rgb(200, 255, 0) 90deg 180deg,blue 180deg 270deg, rgb(239, 243, 4) 270deg 360deg);
+		border-radius: 50%;
+	}
+	100% {
+		background: conic-gradient(rgb(3, 1, 17) 45deg 90deg,transparent 90deg 180deg,rgb(0, 0, 2) 180deg 270deg, transparent 270deg 360deg);
+		transform: rotate(360deg);
+	}
+}
